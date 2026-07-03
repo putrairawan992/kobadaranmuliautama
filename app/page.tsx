@@ -55,78 +55,92 @@ function jsonLd() {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-slate-800">
+    <main className="min-h-screen w-full overflow-x-hidden bg-slate-50 text-slate-800">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd()) }}
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-sky-100">
-        <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-sky-200/40 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-32 -left-24 h-96 w-96 rounded-full bg-cyan-200/40 blur-3xl" />
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:py-28">
+      <section className="relative overflow-hidden bg-industrial-900 bg-tech-grid pb-20 pt-24 text-white lg:pb-32 lg:pt-36">
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-industrial-900/50 via-transparent to-industrial-900"></div>
+        <div className="absolute right-0 top-0 -mr-48 -mt-48 h-[600px] w-[600px] rounded-full bg-industrial-700/30 blur-3xl" />
+        <div className="absolute bottom-0 left-0 -mb-48 -ml-48 h-[500px] w-[500px] rounded-full bg-amber-500/10 blur-3xl" />
+        
+        <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 md:grid-cols-2">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-sky-700">
+            <div className="inline-flex items-center gap-2 border-l-4 border-amber-500 bg-industrial-800/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-slate-300 backdrop-blur">
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
               Prabumulih · Sumatera Selatan
-            </span>
-            <h1 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl">
-              Solusi <span className="bg-gradient-to-r from-sky-500 to-sky-700 bg-clip-text text-transparent">Supply, Konstruksi & IT</span> untuk Bisnis Anda
+            </div>
+            <h1 className="mt-8 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+              Solusi <span className="text-amber-500">Supply, Konstruksi & IT</span> untuk Bisnis Anda
             </h1>
-            <p className="mt-6 max-w-lg text-lg leading-relaxed text-slate-600">
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-slate-400">
               {site.name} menghadirkan layanan <strong>General Supplier, Contractor, Technical Service</strong>, dan <strong>IT Solution</strong> yang profesional, terpercaya, dan terintegrasi.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a href="#kontak" className="rounded-full bg-sky-600 px-7 py-3 font-semibold text-white shadow-lg shadow-sky-600/25 transition hover:bg-sky-700">
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a href="#kontak" className="inline-flex items-center justify-center rounded bg-amber-500 px-8 py-3.5 font-bold text-industrial-900 shadow-lg shadow-amber-500/20 transition hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-industrial-900">
                 Konsultasi Gratis
               </a>
-              <a href="#layanan" className="rounded-full border border-slate-300 px-7 py-3 font-semibold text-slate-700 transition hover:border-sky-400 hover:text-sky-600">
+              <a href="#layanan" className="inline-flex items-center justify-center rounded border border-slate-600 bg-industrial-800/50 px-8 py-3.5 font-semibold text-white backdrop-blur transition hover:border-slate-400 hover:bg-industrial-800 focus:outline-none focus:ring-2 focus:ring-slate-400">
                 Lihat Layanan
               </a>
             </div>
           </div>
-          <div className="flex justify-center">
-            <div className="animate-floaty rounded-[2rem] bg-white/60 p-10 shadow-2xl shadow-sky-600/10 ring-1 ring-white/60 backdrop-blur">
-              <LogoMark className="h-56 w-auto drop-shadow-xl" />
+          <div className="flex justify-center md:justify-end">
+            <div className="glass-panel animate-floaty rounded-2xl p-12 shadow-2xl">
+              <LogoMark className="h-48 w-auto md:h-56 lg:h-64 drop-shadow-2xl" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Services */}
-      <section id="layanan" className="mx-auto max-w-6xl px-5 py-20">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Layanan Kami</h2>
-          <p className="mt-4 text-slate-600">Empat pilar layanan untuk memenuhi kebutuhan operasional dan pengembangan bisnis Anda.</p>
+      <section id="layanan" className="relative mx-auto max-w-6xl px-5 py-24">
+        <div className="mb-16 md:flex md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3">
+              <div className="h-px w-8 bg-amber-500"></div>
+              <span className="text-sm font-bold uppercase tracking-widest text-amber-500">Layanan Kami</span>
+            </div>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-industrial-900 sm:text-4xl">Empat Pilar Layanan</h2>
+            <p className="mt-4 text-lg text-slate-600">Solusi menyeluruh untuk mendukung kebutuhan operasional dan pengembangan bisnis Anda.</p>
+          </div>
         </div>
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s) => (
-            <div key={s.title} className="group rounded-2xl border border-slate-100 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-sky-200 hover:shadow-xl hover:shadow-sky-600/10">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-sky-50 text-sky-600 transition group-hover:bg-sky-600 group-hover:text-white">
-                <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.7} viewBox="0 0 24 24">
+            <div key={s.title} className="group relative overflow-hidden rounded-xl bg-white border border-slate-200 p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-amber-200">
+              <div className="absolute right-0 top-0 h-24 w-24 -translate-y-8 translate-x-8 rounded-full bg-slate-50 transition-transform duration-500 group-hover:scale-150 group-hover:bg-amber-50"></div>
+              
+              <div className="relative mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-industrial-900 text-amber-500 transition-colors duration-300 group-hover:bg-amber-500 group-hover:text-industrial-900">
+                <svg className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d={s.icon} />
                 </svg>
               </div>
-              <h3 className="mt-5 text-lg font-bold text-slate-900">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">{s.desc}</p>
+              <h3 className="relative text-xl font-bold text-industrial-900">{s.title}</h3>
+              <p className="relative mt-3 text-slate-600 leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Features */}
-      <section id="keunggulan" className="bg-slate-50">
-        <div className="mx-auto max-w-6xl px-5 py-20">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Mengapa Memilih Kami</h2>
-            <p className="mt-4 text-slate-600">Komitmen kami pada kualitas, ketepatan, dan kepuasan klien.</p>
+      <section id="keunggulan" className="bg-industrial-900 text-white relative py-24">
+        <div className="absolute inset-0 bg-tech-grid opacity-20 pointer-events-none"></div>
+        <div className="relative mx-auto max-w-6xl px-5">
+          <div className="mx-auto max-w-2xl text-center mb-16">
+            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Keunggulan Utama</h2>
+            <p className="mt-4 text-lg text-slate-400">Komitmen kami pada kualitas, ketepatan, dan kepuasan klien di setiap proyek.</p>
           </div>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((f, i) => (
-              <div key={f.title} className="rounded-2xl bg-white p-7 shadow-sm">
-                <span className="text-3xl font-extrabold text-sky-200">0{i + 1}</span>
-                <h3 className="mt-3 text-base font-bold text-slate-900">{f.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">{f.desc}</p>
+              <div key={f.title} className="border-l-2 border-industrial-700 bg-industrial-800/40 p-8 hover:border-amber-500 transition-colors duration-300">
+                <span className="text-4xl font-black text-industrial-700">0{i + 1}</span>
+                <h3 className="mt-4 text-lg font-bold text-white">{f.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-400">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -134,68 +148,89 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <section id="tentang" className="mx-auto max-w-6xl px-5 py-20">
-        <div className="grid items-center gap-12 md:grid-cols-2">
-          <div className="order-2 md:order-1">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Tentang Perusahaan</h2>
-            <p className="mt-6 leading-relaxed text-slate-600">
-              <strong>{site.name}</strong> adalah perusahaan yang bergerak di bidang pengadaan barang, jasa kontraktor, layanan teknis, dan solusi teknologi informasi. Berbasis di Prabumulih, Sumatera Selatan, kami berkomitmen memberikan layanan berkualitas dengan pendekatan profesional dan solusi yang tepat sasaran.
-            </p>
-            <p className="mt-4 leading-relaxed text-slate-600">
-              Dengan tim yang berpengalaman di berbagai bidang, kami siap menjadi mitra terpercaya bagi kebutuhan supply, konstruksi, teknis, hingga transformasi digital bisnis Anda.
-            </p>
+      <section id="tentang" className="mx-auto max-w-6xl px-5 py-24">
+        <div className="grid items-center gap-16 md:grid-cols-2">
+          <div className="order-2 md:order-1 relative">
+            <div className="absolute -inset-4 bg-slate-100 rounded-2xl transform -rotate-3 z-0"></div>
+            <div className="relative z-10 bg-white rounded-xl p-10 shadow-lg border border-slate-100 flex justify-center items-center h-full min-h-[320px]">
+              <LogoMark className="w-3/5 h-auto text-industrial-900 opacity-90 grayscale contrast-125" />
+            </div>
           </div>
-          <div className="order-1 flex justify-center md:order-2">
-            <div className="rounded-3xl bg-white p-12 shadow-2xl shadow-sky-600/20 ring-1 ring-sky-100">
-              <LogoMark className="h-44 w-auto" />
+          <div className="order-1 md:order-2">
+            <div className="flex items-center gap-3">
+              <div className="h-px w-8 bg-amber-500"></div>
+              <span className="text-sm font-bold uppercase tracking-widest text-amber-500">Profil Perusahaan</span>
+            </div>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-industrial-900 sm:text-4xl">Mitra Terpercaya Anda</h2>
+            <div className="mt-6 space-y-4 text-lg leading-relaxed text-slate-600">
+              <p>
+                <strong>{site.name}</strong> adalah perusahaan yang bergerak di bidang pengadaan barang, jasa kontraktor, layanan teknis, dan solusi teknologi informasi. 
+              </p>
+              <p>
+                Berbasis di Prabumulih, Sumatera Selatan, kami berkomitmen memberikan layanan berkualitas dengan pendekatan profesional dan solusi yang tepat sasaran. Dengan tim yang tangguh dan sarat pengalaman di berbagai sektor industri, kami siap menjadi partner utama dalam operasional dan transformasi digital bisnis Anda.
+              </p>
+            </div>
+            <div className="mt-8 flex items-center gap-4">
+              <div className="flex flex-col">
+                <span className="text-3xl font-black text-industrial-900">100%</span>
+                <span className="text-sm font-semibold text-slate-500 uppercase">Komitmen Kualitas</span>
+              </div>
+              <div className="h-12 w-px bg-slate-200"></div>
+              <div className="flex flex-col">
+                <span className="text-3xl font-black text-industrial-900">24/7</span>
+                <span className="text-sm font-semibold text-slate-500 uppercase">Dukungan Teknis</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Contact */}
-      <section id="kontak" className="bg-gradient-to-br from-sky-600 to-sky-800 text-white">
+      <section id="kontak" className="bg-amber-500 text-industrial-900">
         <div className="mx-auto max-w-6xl px-5 py-20">
-          <div className="grid gap-12 md:grid-cols-2">
+          <div className="grid gap-12 md:grid-cols-2 lg:gap-24">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Hubungi Kami</h2>
-              <p className="mt-4 max-w-md text-sky-100">Diskusikan kebutuhan proyek Anda bersama tim kami. Kami siap membantu.</p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 font-semibold text-sky-700 shadow-lg transition hover:bg-sky-50">
-                  WhatsApp Kami
+              <h2 className="text-3xl font-extrabold tracking-tight sm:text-5xl">Mari Berdiskusi.</h2>
+              <p className="mt-6 text-lg font-medium text-industrial-900/80 max-w-md">Konsultasikan kebutuhan suplai, konstruksi, atau infrastruktur IT proyek Anda bersama tim ahli kami hari ini juga.</p>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded bg-industrial-900 px-8 py-4 font-bold text-white shadow-xl transition hover:bg-industrial-800 hover:-translate-y-1">
+                  Hubungi via WhatsApp
                 </a>
-                <a href={`mailto:${site.email}`} className="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-3 font-semibold text-white transition hover:bg-white/10">
+                <a href={`mailto:${site.email}`} className="inline-flex items-center gap-2 rounded border-2 border-industrial-900 px-8 py-4 font-bold text-industrial-900 transition hover:bg-industrial-900 hover:text-amber-500">
                   Kirim Email
                 </a>
               </div>
             </div>
-            <div className="space-y-6">
+            
+            <div className="flex flex-col justify-center space-y-8 bg-industrial-900/5 p-8 rounded-2xl border border-industrial-900/10">
               <div className="flex items-start gap-4">
-                <span className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/15">
-                  <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-                </span>
+                <div className="mt-1 flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-industrial-900 text-amber-500">
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                </div>
                 <div>
-                  <p className="font-semibold">Alamat Kantor</p>
-                  <p className="mt-1 text-sm text-sky-100">{site.address.street}<br />{site.address.locality}, {site.address.region}</p>
+                  <p className="font-bold text-lg">Alamat Kantor</p>
+                  <p className="mt-1 text-industrial-900/80 font-medium leading-relaxed">{site.address.street}<br />{site.address.locality}, {site.address.region}</p>
                 </div>
               </div>
+              
               <div className="flex items-start gap-4">
-                <span className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/15">
-                  <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a1.5 1.5 0 001.5-1.5v-3.4a1.5 1.5 0 00-1.264-1.482l-4.163-.693a1.5 1.5 0 00-1.517.71l-.706 1.176a11.25 11.25 0 01-5.61-5.61l1.176-.706a1.5 1.5 0 00.71-1.517l-.693-4.163A1.5 1.5 0 007.35 3H3.75a1.5 1.5 0 00-1.5 1.5v2.25z"/></svg>
-                </span>
+                <div className="mt-1 flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-industrial-900 text-amber-500">
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a1.5 1.5 0 001.5-1.5v-3.4a1.5 1.5 0 00-1.264-1.482l-4.163-.693a1.5 1.5 0 00-1.517.71l-.706 1.176a11.25 11.25 0 01-5.61-5.61l1.176-.706a1.5 1.5 0 00.71-1.517l-.693-4.163A1.5 1.5 0 007.35 3H3.75a1.5 1.5 0 00-1.5 1.5v2.25z"/></svg>
+                </div>
                 <div>
-                  <p className="font-semibold">Telepon / WhatsApp</p>
-                  <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer" className="mt-1 block text-sm text-sky-100 underline-offset-2 hover:underline">{site.phone}</a>
+                  <p className="font-bold text-lg">Telepon / WhatsApp</p>
+                  <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer" className="mt-1 block font-semibold text-industrial-900/80 hover:text-industrial-900">{site.phone}</a>
                 </div>
               </div>
+              
               <div className="flex items-start gap-4">
-                <span className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/15">
-                  <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-                </span>
+                <div className="mt-1 flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-industrial-900 text-amber-500">
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                </div>
                 <div>
-                  <p className="font-semibold">Email</p>
-                  <a href={`mailto:${site.email}`} className="mt-1 block text-sm text-sky-100 underline-offset-2 hover:underline">{site.email}</a>
-                  <a href={`mailto:${site.email2}`} className="mt-0.5 block text-sm text-sky-100 underline-offset-2 hover:underline">{site.email2}</a>
+                  <p className="font-bold text-lg">Email</p>
+                  <a href={`mailto:${site.email}`} className="mt-1 block font-semibold text-industrial-900/80 hover:text-industrial-900">{site.email}</a>
+                  <a href={`mailto:${site.email2}`} className="mt-0.5 block font-semibold text-industrial-900/80 hover:text-industrial-900">{site.email2}</a>
                 </div>
               </div>
             </div>
@@ -204,13 +239,13 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-slate-400">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-8 text-sm sm:flex-row">
+      <footer className="bg-industrial-900 text-slate-400 border-t border-industrial-800">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-5 py-10 text-sm sm:flex-row">
           <div className="flex items-center gap-3">
-            <LogoMark className="h-10 w-auto rounded bg-white/95 p-1" />
-            <span className="font-semibold text-slate-200">{site.name}</span>
+            <LogoMark className="h-10 w-auto rounded bg-white p-1" />
+            <span className="font-bold text-white tracking-wide">{site.name}</span>
           </div>
-          <p>&copy; {new Date().getFullYear()} {site.shortName}. All rights reserved.</p>
+          <p className="font-medium">&copy; {new Date().getFullYear()} {site.shortName}. All rights reserved.</p>
         </div>
       </footer>
     </main>

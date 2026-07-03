@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import { site } from "@/lib/site";
 import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -46,8 +49,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="id">
-      <body>{children}</body>
+    <html lang="id" className={`${inter.variable} font-sans overflow-x-hidden`}>
+      <body className="antialiased overflow-x-hidden">{children}</body>
     </html>
   );
 }
