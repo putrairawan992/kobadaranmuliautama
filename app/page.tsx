@@ -34,12 +34,14 @@ const features = [
 function jsonLd() {
   return {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": "LocalBusiness",
     name: site.name,
     description: site.description,
     email: site.email,
     telephone: site.phoneHref,
     url: site.url,
+    logo: `${site.url}/logo.png`,
+    image: `${site.url}/logo.png`,
     address: {
       "@type": "PostalAddress",
       streetAddress: site.address.street,
@@ -48,8 +50,17 @@ function jsonLd() {
       postalCode: site.address.postalCode,
       addressCountry: site.address.country,
     },
-    areaServed: "Prabumulih, Sumatera Selatan, Indonesia",
-    makesOffer: services.map((s) => ({ "@type": "Offer", name: s.title })),
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "-3.4286",
+      longitude: "104.2289",
+    },
+    areaServed: ["Prabumulih", "Sumatera Selatan", "Indonesia"],
+    makesOffer: services.map((s) => ({
+      "@type": "Offer",
+      name: s.title,
+      description: s.desc,
+    })),
   };
 }
 

@@ -18,5 +18,5 @@ export const site = {
     postalCode: "31121",
   },
   // Change this to your final Vercel/custom domain before/after deploy.
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://kobadaran-mulia-utama.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://kobadaranmuliautama.vercel.app",
 } as const;

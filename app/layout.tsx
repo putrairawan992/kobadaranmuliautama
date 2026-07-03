@@ -31,11 +31,20 @@ export const metadata: Metadata = {
     siteName: site.shortName,
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
+    images: [
+      {
+        url: `${site.url}/logo.png`,
+        width: 1200,
+        height: 630,
+        alt: site.name,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
+    images: [`${site.url}/logo.png`],
   },
   robots: {
     index: true,
