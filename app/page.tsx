@@ -38,6 +38,7 @@ function jsonLd() {
     name: site.name,
     description: site.description,
     email: site.email,
+    telephone: site.phoneHref,
     url: site.url,
     address: {
       "@type": "PostalAddress",
@@ -159,9 +160,14 @@ export default function Home() {
             <div>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Hubungi Kami</h2>
               <p className="mt-4 max-w-md text-sky-100">Diskusikan kebutuhan proyek Anda bersama tim kami. Kami siap membantu.</p>
-              <a href={`mailto:${site.email}`} className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 font-semibold text-sky-700 shadow-lg transition hover:bg-sky-50">
-                Kirim Email
-              </a>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 font-semibold text-sky-700 shadow-lg transition hover:bg-sky-50">
+                  WhatsApp Kami
+                </a>
+                <a href={`mailto:${site.email}`} className="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-3 font-semibold text-white transition hover:bg-white/10">
+                  Kirim Email
+                </a>
+              </div>
             </div>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
@@ -175,11 +181,21 @@ export default function Home() {
               </div>
               <div className="flex items-start gap-4">
                 <span className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/15">
+                  <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a1.5 1.5 0 001.5-1.5v-3.4a1.5 1.5 0 00-1.264-1.482l-4.163-.693a1.5 1.5 0 00-1.517.71l-.706 1.176a11.25 11.25 0 01-5.61-5.61l1.176-.706a1.5 1.5 0 00.71-1.517l-.693-4.163A1.5 1.5 0 007.35 3H3.75a1.5 1.5 0 00-1.5 1.5v2.25z"/></svg>
+                </span>
+                <div>
+                  <p className="font-semibold">Telepon / WhatsApp</p>
+                  <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer" className="mt-1 block text-sm text-sky-100 underline-offset-2 hover:underline">{site.phone}</a>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <span className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/15">
                   <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
                 </span>
                 <div>
                   <p className="font-semibold">Email</p>
                   <a href={`mailto:${site.email}`} className="mt-1 block text-sm text-sky-100 underline-offset-2 hover:underline">{site.email}</a>
+                  <a href={`mailto:${site.email2}`} className="mt-0.5 block text-sm text-sky-100 underline-offset-2 hover:underline">{site.email2}</a>
                 </div>
               </div>
             </div>

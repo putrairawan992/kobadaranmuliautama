@@ -6,7 +6,10 @@ export const site = {
   description:
     "PT. Kobadaran Mulia Utama — penyedia jasa General Supplier, Contractor, Technical Service, dan IT Solution profesional di Prabumulih, Sumatera Selatan. Solusi teknis & pengadaan terpercaya untuk industri dan bisnis Anda.",
   email: "kobadaranmu@gmail.com",
-  phone: "+62",
+  email2: "putrairawan993@gmail.com",
+  phone: "+62 819-9494-7275",
+  phoneHref: "+6281994947275",
+  whatsappHref: "https://wa.me/6281994947275",
   address: {
     street: "Jl. Alipatan Gang Amir, RT 029/RW 012, Mangga Besar",
     locality: "Prabumulih Utara",
